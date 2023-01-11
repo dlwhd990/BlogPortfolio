@@ -1,0 +1,17 @@
+.menu_title {
+  font-size: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+}
+
+.menu_title:hover {
+  background-color: rgba(252, 226, 219, 0.5);
+  color: var(--color-red);
+  border-radius: 10px;
+}
+
+.menu_icon {
+  font-size: 1.5rem;
+  width: 2.2rem;
+  margin-right: 0.8rem;
+}

@@ -11,11 +11,10 @@
 }
 
 .user img {
-  width: 9rem;
-  height: 9rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 12px;
-  box-shadow: 0 0 10px lightgray;
-  outline: 1px solid lightgray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .name {
@@ -50,15 +49,20 @@
   height: 3rem;
   font-size: 2rem;
   cursor: pointer;
+  transition: 250ms all ease-in-out;
+}
+
+.button_container button:hover {
+  transform: scale(1.2) translateY(-2px);
 }
 
 .icon_home {
-  color: #86c8bc;
+  color: rgb(97, 212, 241);
 }
 
 .icon_git {
   font-size: 2.2rem;
-  color: #7f669d;
+  color: #ff8e9e;
 }
 
 .icon_dark {

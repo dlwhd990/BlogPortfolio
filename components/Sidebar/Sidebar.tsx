@@ -1,39 +1,10 @@
-import { faSnowflake } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { menuList } from "../../util/staticDatas/menu";
+import { categoryList } from "../../util/staticDatas/menu";
+import CategorySet from "../CategorySet/CategorySet";
 import UserData from "../UserData/UserData";
 import styles from "./Sidebar.module.css";
 
-const classList: string[] = [];
-
-menuList.forEach((menu) => {
-  if (!classList.includes(menu.class)) {
-    classList.push(menu.class);
-  }
-});
-
-const menuHTML = classList.map((cl) => {
-  return (
-    <div key={cl} className={styles.class_set}>
-      <p className={styles.class_title}>
-        <FontAwesomeIcon icon={faSnowflake} className={styles.class_icon} />
-        {cl}
-      </p>
-      <ul>
-        {menuList
-          .filter((menu) => menu.class === cl)
-          .map((menu) => (
-            <li key={menu.id} className={styles.menu_title}>
-              <FontAwesomeIcon
-                icon={menu.icon}
-                className={`${styles.menu_icon} ${menu.path.slice(1)}`}
-              />
-              {menu.title}
-            </li>
-          ))}
-      </ul>
-    </div>
-  );
+const menuHTML = categoryList.map((cl) => {
+  return <CategorySet key={cl} cl={cl} />;
 });
 
 const Sidebar = () => {

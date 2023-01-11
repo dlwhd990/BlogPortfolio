@@ -1,0 +1,8 @@
+.article_section {
+  width: 115rem;
+  padding: 5rem 0;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
