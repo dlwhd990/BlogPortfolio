@@ -1,0 +1,56 @@
+.sidebar {
+  width: 24rem;
+  height: 100vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 250ms all ease-in-out;
+  overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.menu_container {
+  padding: 2rem;
+}
+
+.class_set {
+  margin-bottom: 2rem;
+}
+
+.class_title {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.class_icon {
+  font-size: 1.5rem;
+  margin-right: 0.6rem;
+  color: skyblue;
+}
+
+.menu_title {
+  font-size: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+}
+
+.menu_title:hover {
+  background-color: rgba(252, 226, 219, 0.5);
+  color: var(--color-red);
+  border-radius: 10px;
+}
+
+.menu_icon {
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .sidebar {
+    transform: translateX(-24rem);
+  }
+}

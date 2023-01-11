@@ -1,0 +1,112 @@
+import { faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCode,
+  faComputer,
+  faDatabase,
+  faEarthAmericas,
+  faLightbulb,
+  faNetworkWired,
+  faVectorSquare,
+} from "@fortawesome/free-solid-svg-icons";
+import Menu from "../../model/menu";
+
+export const menuList: Menu[] = [
+  {
+    id: 0,
+    class: "Programming",
+    title: "JavaScript",
+    path: "/javascript",
+    icon: faSquareJs,
+  },
+  {
+    id: 1,
+    class: "Programming",
+    title: "TypeScript",
+    path: "/typescript",
+    icon: faSquareJs,
+  },
+  {
+    id: 2,
+    class: "Programming",
+    title: "React",
+    path: "/react",
+    icon: faReact,
+  },
+  {
+    id: 3,
+    class: "Programming",
+    title: "Redux",
+    path: "/redux",
+    icon: faCode,
+  },
+  {
+    id: 4,
+    class: "Programming",
+    title: "Next.js",
+    path: "/next",
+    icon: faCode,
+  },
+  {
+    id: 5,
+    class: "CS",
+    title: "자료구조",
+    path: "/datastructure",
+    icon: faCode,
+  },
+  {
+    id: 6,
+    class: "CS",
+    title: "알고리즘",
+    path: "/algorithm",
+    icon: faLightbulb,
+  },
+  {
+    id: 7,
+    class: "CS",
+    title: "네트워크",
+    path: "/network",
+    icon: faNetworkWired,
+  },
+  {
+    id: 8,
+    class: "CS",
+    title: "운영체제",
+    path: "/os",
+    icon: faComputer,
+  },
+  {
+    id: 9,
+    class: "CS",
+    title: "데이터베이스",
+    path: "/db",
+    icon: faDatabase,
+  },
+  {
+    id: 10,
+    class: "CS",
+    title: "디자인패턴",
+    path: "/designpattern",
+    icon: faVectorSquare,
+  },
+  {
+    id: 11,
+    class: "CS",
+    title: "WEB",
+    path: "/web",
+    icon: faEarthAmericas,
+  },
+  {
+    id: 12,
+    class: "코딩테스트",
+    title: "백준",
+    path: "/boj",
+    icon: faCode,
+  },
+  {
+    id: 13,
+    class: "코딩테스트",
+    title: "프로그래머스",
+    path: "/programmers",
+    icon: faCode,
+  },
+];

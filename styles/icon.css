@@ -1,0 +1,55 @@
+.javascript {
+  color: rgb(239, 214, 62);
+}
+
+.typescript {
+  color: rgb(48, 119, 189);
+}
+
+.react {
+  color: rgb(97, 212, 241);
+}
+
+.redux {
+  color: #ff8e9e;
+}
+
+.next {
+  color: #b1afff;
+}
+
+.datastructure {
+  color: var(--color-green);
+}
+
+.algorithm {
+  color: rgb(239, 214, 62);
+}
+
+.network {
+  color: var(--color-blue);
+}
+
+.os {
+  color: #ff8e9e;
+}
+
+.db {
+  color: var(--color-green);
+}
+
+.designpattern {
+  color: var(--color-red);
+}
+
+.web {
+  color: rgb(97, 212, 241);
+}
+
+.boj {
+  color: #ff8e9e;
+}
+
+.programmers {
+  color: #ecc5fb;
+}

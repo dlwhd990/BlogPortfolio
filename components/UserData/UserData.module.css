@@ -1,0 +1,66 @@
+.user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  /* background-color: rgba(184, 232, 252, 0.1); */
+  border-bottom: 1px solid rgb(244, 241, 241);
+}
+
+.user img {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px lightgray;
+  outline: 1px solid lightgray;
+}
+
+.name {
+  font-size: 1.8rem;
+  color: var(--color-black);
+  margin-top: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.desc {
+  font-size: 1.4rem;
+  color: var(--color-lightgray);
+}
+
+.button_container {
+  width: 21rem;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.button_container button {
+  width: 5rem;
+  height: 3rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.icon_home {
+  color: #86c8bc;
+}
+
+.icon_git {
+  font-size: 2.2rem;
+  color: #7f669d;
+}
+
+.icon_dark {
+  color: #ffe15d;
+}
