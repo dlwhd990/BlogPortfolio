@@ -8,7 +8,7 @@ const menuHTML = categoryList.map((cl) => {
 });
 
 const MenuPopup = () => {
-  const menuState = useAppSelector((state) => state.popup.menu);
+  const menuState = useAppSelector((state) => state.toggle.menu);
 
   return (
     <div

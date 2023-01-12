@@ -34,6 +34,17 @@ const MenuPage = () => {
         <ArticleColumn />
         <ArticleColumn />
         <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
+        <ArticleColumn />
       </section>
     </main>
   );

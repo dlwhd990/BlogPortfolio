@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import popupSlice from "./popup";
+import toggleSlice from "./toggle";
 
-const store = configureStore({ reducer: { popup: popupSlice.reducer } });
+const store = configureStore({ reducer: { toggle: toggleSlice.reducer } });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

@@ -27,6 +27,7 @@ input {
 }
 
 p,
+a,
 h1,
 h2,
 h3,
@@ -34,5 +35,29 @@ h4,
 h5,
 h6 {
   color: var(--color-black);
-  cursor: default;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+code {
+  color: #8250df;
+}
+
+code .hljs-keyword {
+  color: #cf222e;
+}
+
+.hljs-function {
+  color: #0550ae;
+}
+
+.hljs-number {
+  color: #0550ae;
 }

@@ -36,10 +36,6 @@
 .header_menu li {
   margin: 0 2.8rem;
   cursor: pointer;
-}
-
-.header_menu li:hover {
-  color: white;
   transition: 250ms all ease-in-out;
 }
 
@@ -49,6 +45,13 @@
 
 .icon_only {
   font-size: 2rem;
+  color: rgba(250, 250, 250, 0.6);
+  transition: 250ms all ease-in-out;
+}
+
+.header_menu li:hover,
+.icon_only:hover {
+  color: white;
 }
 
 .search {
@@ -99,7 +102,8 @@
   color: var(--color-black);
 }
 
-.on .header_menu li:hover {
+.on .header_menu li:hover,
+.on .icon_only:hover {
   color: #ff8e9e;
 }
 
@@ -109,6 +113,10 @@
 
 .on .search:focus-within {
   background-color: rgb(232, 232, 232);
+}
+
+.on .icon_only {
+  color: var(--color-black);
 }
 
 @media screen and (max-width: 1400px) {

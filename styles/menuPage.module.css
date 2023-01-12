@@ -6,3 +6,23 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 1150px) {
+  .article_section {
+    width: 70rem;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .article_section {
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .article_section {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

@@ -5,7 +5,7 @@ import styles from "./ArticleColumn.module.css";
 const ArticleColumn = () => {
   return (
     <div className={styles.item}>
-      <img src="/images/d.gif" alt="게시글_이미지" />
+      <img src="/images/d.gif" alt="게시글_이미지" loading="lazy" />
       <div className={styles.data_container}>
         <h2>자바스크립트의 동작 원리 - 1</h2>
         <p className={styles.content}>

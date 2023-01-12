@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { menu: false };
 
-const popupSlice = createSlice({
-  name: "popup",
+const toggleSlice = createSlice({
+  name: "toggle",
   initialState,
   reducers: {
     changeMenuState(state) {
@@ -15,5 +15,5 @@ const popupSlice = createSlice({
   },
 });
 
-export const { changeMenuState, closeMenu } = popupSlice.actions;
-export default popupSlice;
+export const { changeMenuState, closeMenu } = toggleSlice.actions;
+export default toggleSlice;

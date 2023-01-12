@@ -5,9 +5,10 @@ import {
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../store/hooks";
-import { changeMenuState } from "../../store/popup";
+import { changeMenuState } from "../../store/toggle";
 import MenuPopup from "../MenuPopup/MenuPopup";
 import styles from "./Header.module.css";
 
@@ -53,10 +54,12 @@ const Header = () => {
         </div>
         <ul className={styles.header_menu}>
           <li>
-            <FontAwesomeIcon
-              icon={faWandMagicSparkles}
-              className={styles.icon_only}
-            />
+            <Link href="https://card-study.vercel.app/" target="_blank">
+              <FontAwesomeIcon
+                icon={faWandMagicSparkles}
+                className={styles.icon_only}
+              />
+            </Link>
           </li>
           <li>
             <FontAwesomeIcon icon={faHeart} className={styles.icon_only} />

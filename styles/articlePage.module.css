@@ -1,0 +1,72 @@
+.article_section {
+  position: absolute;
+  width: calc(100% - 24rem);
+  top: 60vh;
+  height: 100vh;
+  background-color: white;
+}
+
+.main article {
+  width: 100rem;
+  padding: 10rem 0;
+  margin: auto;
+}
+
+.main article h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin: 1.6rem 0;
+}
+
+.main article h2 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin: 1.5rem 0;
+}
+
+.main article h3 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin: 1.4rem 0;
+}
+
+.main article h4 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.main article p,
+.main article li,
+.main article pre {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-lightgray);
+  margin: 1rem 0;
+  line-height: 4rem;
+}
+
+.main article pre {
+  background-color: #f6f8fa;
+  padding: 1.6rem;
+  border-radius: 6px;
+}
+
+.main article p {
+  line-height: 2.6rem;
+}
+
+.main article hr {
+  background: var(--color-pink);
+  height: 2px;
+  border: 0;
+}
+
+.main article ol {
+  padding-left: 3rem;
+}
+
+.main article ul {
+  padding-left: 2rem;
+  list-style: initial;
+}

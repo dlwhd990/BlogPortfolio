@@ -32,32 +32,43 @@
   font-weight: 500;
   margin-bottom: 3rem;
   color: #fbfacd;
+  animation: 1300ms appearFromTop;
+  animation-delay: 300ms;
+  animation-fill-mode: both;
 }
 
 .data_container h2 {
   font-size: 2rem;
   font-weight: 500;
+  animation: 1300ms appearFromLeft;
+  animation-delay: 1200ms;
+  animation-fill-mode: both;
 }
 
 .data_container h1 {
   font-size: 5rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  animation: 1300ms appearFromTop;
+  animation-fill-mode: both;
 }
 
 .blog h3 {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  animation: none;
 }
 
 .blog h2 {
   font-size: 2.4rem;
+  animation: none;
 }
 
 .blog h1 {
   font-size: 7rem;
   font-weight: 900;
+  animation: none;
 }
 
 .main_banner img {
@@ -70,5 +81,85 @@
   .data_container {
     width: 100%;
     transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .data_container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .data_container h2 {
+    font-size: 1.8rem;
+  }
+
+  .data_container h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog h2 {
+    font-size: 2.2rem;
+  }
+
+  .blog h1 {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .data_container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .data_container h2 {
+    font-size: 1.5rem;
+  }
+
+  .data_container h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog h1 {
+    font-size: 4rem;
+  }
+}
+
+@keyframes appearFromTop {
+  0% {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appearFromLeft {
+  0% {
+    transform: translateX(-15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

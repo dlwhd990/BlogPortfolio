@@ -7,6 +7,8 @@ type Article = {
   menu: string;
   commentCount: number;
   likeCount: number;
+  coverImage: string;
+  previewContent: string;
 };
 
 export default Article;
