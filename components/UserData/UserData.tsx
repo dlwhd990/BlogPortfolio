@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import profileImage from "../../public/images/d.gif";
 import { useAppDispatch } from "../../store/hooks";
-import { closeSidebar } from "../../store/toggle";
+import { changeDarkModeState, closeSidebar } from "../../store/toggle";
 import styles from "./UserData.module.css";
 
 const UserData = () => {
@@ -14,6 +14,10 @@ const UserData = () => {
 
   const dispatchCloseSidebar = () => {
     dispatch(closeSidebar());
+  };
+
+  const darkModeHandler = () => {
+    dispatch(changeDarkModeState());
   };
 
   return (
@@ -24,17 +28,17 @@ const UserData = () => {
         <p className={styles.desc}>DEV 🐻</p>
       </div>
       <div className={styles.button_container}>
-        <button onClick={dispatchCloseSidebar}>
-          <Link href="/">
+        <Link href="/">
+          <button onClick={dispatchCloseSidebar}>
             <FontAwesomeIcon icon={faHouse} className={styles.icon_home} />
-          </Link>
-        </button>
-        <button onClick={dispatchCloseSidebar}>
-          <Link target="_blank" href="https://github.com/dlwhd990">
+          </button>
+        </Link>
+        <Link target="_blank" href="https://github.com/dlwhd990">
+          <button onClick={dispatchCloseSidebar}>
             <FontAwesomeIcon icon={faGithub} className={styles.icon_git} />
-          </Link>
-        </button>
-        <button>
+          </button>
+        </Link>
+        <button onClick={darkModeHandler}>
           <FontAwesomeIcon icon={faCloudMoon} className={styles.icon_dark} />
         </button>
       </div>

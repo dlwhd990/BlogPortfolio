@@ -3,12 +3,14 @@ import bannerImage from "../../public/images/abc.jpg";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faPen } from "@fortawesome/free-solid-svg-icons";
+import Article from "../../model/article";
 
-const ArticleBanner = () => {
+const ArticleBanner: React.FC<{ article: Article }> = ({ article }) => {
+  const { title, date, coverImage } = article;
   return (
     <div className={styles.banner}>
       <div className={styles.data_container}>
-        <h1>자바스크립트의 동작 원리 - 1</h1>
+        <h1>{title}</h1>
         <p>
           <span>
             <FontAwesomeIcon icon={faPen} />
@@ -16,11 +18,12 @@ const ArticleBanner = () => {
           </span>
           |
           <span>
-            <FontAwesomeIcon icon={faCalendar} /> 2021-01-11
+            <FontAwesomeIcon icon={faCalendar} />{" "}
+            {new Date(date + 1000 * 60 * 60 * 9).toISOString().slice(0, 10)}
           </span>
         </p>
       </div>
-      <Image src={bannerImage} alt="배경 이미지" />
+      <img src={coverImage} alt="배경 이미지" />
     </div>
   );
 };

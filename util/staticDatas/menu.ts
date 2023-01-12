@@ -13,6 +13,7 @@ import Menu from "../../model/menu";
 export const menuList: Menu[] = [
   {
     id: 0,
+    categoryId: 0,
     category: "Programming",
     title: "JavaScript",
     path: "/javascript",
@@ -21,6 +22,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 1,
+    categoryId: 0,
     category: "Programming",
     title: "TypeScript",
     path: "/typescript",
@@ -29,6 +31,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 2,
+    categoryId: 0,
     category: "Programming",
     title: "React",
     path: "/react",
@@ -37,6 +40,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 3,
+    categoryId: 0,
     category: "Programming",
     title: "Redux",
     path: "/redux",
@@ -45,6 +49,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 4,
+    categoryId: 0,
     category: "Programming",
     title: "Next.js",
     path: "/next",
@@ -53,6 +58,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 5,
+    categoryId: 1,
     category: "CS",
     title: "자료구조",
     path: "/datastructure",
@@ -61,6 +67,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 6,
+    categoryId: 1,
     category: "CS",
     title: "알고리즘",
     path: "/algorithm",
@@ -69,6 +76,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 7,
+    categoryId: 1,
     category: "CS",
     title: "네트워크",
     path: "/network",
@@ -77,6 +85,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 8,
+    categoryId: 1,
     category: "CS",
     title: "운영체제",
     path: "/os",
@@ -85,6 +94,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 9,
+    categoryId: 1,
     category: "CS",
     title: "데이터베이스",
     path: "/db",
@@ -93,6 +103,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 10,
+    categoryId: 1,
     category: "CS",
     title: "디자인패턴",
     path: "/designpattern",
@@ -101,6 +112,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 11,
+    categoryId: 1,
     category: "CS",
     title: "WEB",
     path: "/web",
@@ -109,6 +121,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 12,
+    categoryId: 2,
     category: "코딩테스트",
     title: "BOJ",
     path: "/boj",
@@ -117,6 +130,7 @@ export const menuList: Menu[] = [
   },
   {
     id: 13,
+    categoryId: 2,
     category: "코딩테스트",
     title: "프로그래머스",
     path: "/programmers",

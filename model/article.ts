@@ -1,5 +1,5 @@
 type Article = {
-  id: string;
+  _id: object;
   title: string;
   content: string;
   date: number;

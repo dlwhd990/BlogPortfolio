@@ -123,12 +123,13 @@
   font-size: 2.6rem;
   color: var(--color-black);
   position: fixed;
-  top: 2.2rem;
+  top: 3.2rem;
   left: 2rem;
   z-index: 5;
   cursor: pointer;
   display: none;
   transition: 250ms all ease-in-out;
+  color: rgba(250, 250, 250, 0.6);
 }
 
 @media screen and (max-width: 1400px) {
@@ -139,11 +140,6 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .off {
-    height: 7rem;
-    background-color: white;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  }
   .navbar {
     width: 100%;
     padding: 0 2rem 0 8rem;
@@ -168,11 +164,8 @@
     display: block;
   }
 
-  .off .search {
-    background-color: rgb(243, 243, 243);
-  }
-
-  .off .search:focus-within {
-    background-color: rgb(232, 232, 232);
+  .on .sidebar_toggle {
+    top: 2.2rem;
+    color: var(--color-black);
   }
 }
