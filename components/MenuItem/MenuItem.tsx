@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
 import Menu from "../../model/menu";
 import { useAppDispatch } from "../../store/hooks";
-import { closeMenu } from "../../store/toggle";
+import { closeMenu, closeSidebar } from "../../store/toggle";
 import styles from "./MenuItem.module.css";
 
 const MenuItem: React.FC<{ menu: Menu }> = ({ menu }) => {
@@ -11,6 +11,7 @@ const MenuItem: React.FC<{ menu: Menu }> = ({ menu }) => {
 
   const moveToPath = () => {
     dispatch(closeMenu());
+    dispatch(closeSidebar());
     router.push(menu.path);
   };
 
