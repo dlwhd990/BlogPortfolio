@@ -23,11 +23,13 @@
   font-size: 3.4rem;
   color: white;
   margin-bottom: 2rem;
+  padding: 0 2rem;
 }
 
 .data_container p {
   font-size: 1.8rem;
   color: white;
+  padding: 0 2rem;
 }
 
 .data_container span {
@@ -50,5 +52,21 @@
   .data_container {
     width: 100%;
     transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .data_container h1 {
+    font-size: 3rem;
+  }
+
+  .data_container p {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .data_container h1 {
+    font-size: 2.6rem;
   }
 }

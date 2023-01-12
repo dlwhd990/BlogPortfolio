@@ -7,6 +7,7 @@
   left: 0;
   transition: 250ms all ease-in-out;
   overflow-y: scroll;
+  background-color: white;
   z-index: 4;
 }
 
@@ -21,5 +22,18 @@
 @media screen and (max-width: 1400px) {
   .sidebar {
     transform: translateX(-24rem);
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .on {
+    transform: translateX(0rem);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .off {
+    transform: translateX(-24rem);
+    box-shadow: none;
   }
 }

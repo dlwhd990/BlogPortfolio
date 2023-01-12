@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { menu: false };
+const initialState = { menu: false, sidebar: false };
 
 const toggleSlice = createSlice({
   name: "toggle",
@@ -12,8 +12,15 @@ const toggleSlice = createSlice({
     closeMenu(state) {
       state.menu = false;
     },
+    changeSidebarState(state) {
+      state.sidebar = !state.sidebar;
+    },
+    closeSidebar(state) {
+      state.sidebar = false;
+    },
   },
 });
 
-export const { changeMenuState, closeMenu } = toggleSlice.actions;
+export const { changeMenuState, closeMenu, changeSidebarState, closeSidebar } =
+  toggleSlice.actions;
 export default toggleSlice;

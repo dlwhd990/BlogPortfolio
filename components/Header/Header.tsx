@@ -1,4 +1,5 @@
 import {
+  faBars,
   faCaretDown,
   faHeart,
   faMagnifyingGlass,
@@ -8,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../store/hooks";
-import { changeMenuState } from "../../store/toggle";
+import { changeMenuState, changeSidebarState } from "../../store/toggle";
 import MenuPopup from "../MenuPopup/MenuPopup";
 import styles from "./Header.module.css";
 
@@ -18,6 +19,10 @@ const Header = () => {
 
   const onMenuClickHandler = () => {
     dispatch(changeMenuState());
+  };
+
+  const onSidebarToggleClickHandler = () => {
+    dispatch(changeSidebarState());
   };
 
   useEffect(() => {
@@ -30,6 +35,12 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
+      <button
+        className={styles.sidebar_toggle}
+        onClick={onSidebarToggleClickHandler}
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
       <nav
         className={`${styles.navbar} ${
           scrolled ? `${styles.on}` : `${styles.off}`

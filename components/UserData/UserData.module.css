@@ -67,3 +67,9 @@
 .icon_dark {
   color: #ffe15d;
 }
+
+@media screen and (max-width: 1150px) {
+  .user {
+    padding-top: 11rem;
+  }
+}
