@@ -1,10 +1,18 @@
 .article_section {
   width: 115rem;
+  min-height: 40vh;
   padding: 5rem 0;
   margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.loader_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nothing_container {
