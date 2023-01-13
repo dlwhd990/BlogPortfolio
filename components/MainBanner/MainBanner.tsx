@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./MainBanner.module.css";
-import bannerImage from "../../public/images/pixel-jeff-divoom.gif";
+// import bannerImage from "../../public/images/pixel-jeff-divoom.gif";
+// import bannerImage from "../../public/images/divoom.mp4";
 import BannerData from "../../model/bannerData";
 
 const MainBanner: React.FC<{
@@ -15,7 +16,8 @@ const MainBanner: React.FC<{
         <h1>{title}</h1>
         <h2>{subBottom}</h2>
       </div>
-      <Image src={bannerImage} alt="배경 이미지" />
+      {/* <Image src={bannerImage} alt="배경 이미지" /> */}
+      <video src="/images/divoom.mp4" autoPlay muted />
     </div>
   );
 };
