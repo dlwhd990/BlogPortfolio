@@ -5,15 +5,19 @@ import Article from "../../model/article";
 import styles from "../../styles/articlePage.module.css";
 import { connectToDatabase } from "../../util/mongodb";
 
-const ArticlePage: React.FC<{ article: Article }> = ({ article }) => {
+const ArticlePage: React.FC<{ article: Article }> = (props) => {
   return (
     <main className={styles.main}>
-      <ArticleBanner article={article} />
-      <section className={styles.article_section}>
-        <article
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        ></article>
-      </section>
+      {props.article && (
+        <>
+          <ArticleBanner article={props.article} />
+          <section className={styles.article_section}>
+            <article
+              dangerouslySetInnerHTML={{ __html: props.article.content }}
+            ></article>
+          </section>
+        </>
+      )}
     </main>
   );
 };
@@ -47,6 +51,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         : ""
     ),
   });
+  if (!article) {
+    console.log("ERROR OCCURRED!!");
+  }
 
   return {
     props: {
