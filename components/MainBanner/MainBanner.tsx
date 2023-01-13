@@ -1,14 +1,12 @@
 import Image from "next/image";
 import styles from "./MainBanner.module.css";
-import homeBannerImage from "../../public/images/ff.gif";
-import blogBannerImage from "../../public/images/11_1041uuu-2.gif";
+import bannerImage from "../../public/images/pixel-jeff-divoom.gif";
 import BannerData from "../../model/bannerData";
 
 const MainBanner: React.FC<{
   bannerData: BannerData;
 }> = ({ bannerData }) => {
   const { subTop, title, subBottom, isBlog } = bannerData;
-  const bannerImage = isBlog ? blogBannerImage : homeBannerImage;
 
   return (
     <div className={styles.main_banner}>
