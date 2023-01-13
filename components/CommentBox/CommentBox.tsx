@@ -26,6 +26,8 @@ const CommentBox: React.FC<{
 
   const onSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
+    // 나중에 alert 추가해서 알림 띄우기 (안된다고)
+    if (content.length === 0 || content.length > 500) return;
     const response = await axios.post(`/api/comment/${articleId}`, { content });
     console.log(response.data);
     if (response.data.success) {
