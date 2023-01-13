@@ -23,6 +23,7 @@
   padding: 1rem;
   cursor: pointer;
   transition: 250ms all ease-in-out;
+  color: var(--color-black);
 }
 
 .paging_list li:hover,

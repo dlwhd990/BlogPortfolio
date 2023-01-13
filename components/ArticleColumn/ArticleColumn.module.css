@@ -96,6 +96,10 @@
     margin: calc(6rem / 4);
   }
 
+  .data_container {
+    padding-bottom: 0;
+  }
+
   .item img {
     height: 20rem;
   }
@@ -114,6 +118,10 @@
 
   .item img {
     height: 22rem;
+  }
+
+  .data_container {
+    padding-bottom: 2rem;
   }
 
   .content {
