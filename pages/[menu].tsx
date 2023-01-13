@@ -22,12 +22,6 @@ const MenuPage = () => {
     isBlog: true,
   });
 
-  const seoData = {
-    title: `이종혁의 블로그 - ${router.query.menu}`,
-    description: `${router.query.menu}에 대해 공부합니다.`,
-    canonical: `https://blog-portfolio-theta.vercel.app/${router.query.menu}`,
-  };
-
   useEffect(() => {
     if (!router.isReady) return;
 
@@ -75,7 +69,6 @@ const MenuPage = () => {
         {pending && <Loader />}
         {!pending && (
           <>
-            <NextSeo {...seoData} />
             <MainBanner bannerData={bannerData} />
             <section className={styles.article_section}>
               {articleList.length > 0 && (

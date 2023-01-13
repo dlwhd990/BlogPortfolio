@@ -7,6 +7,9 @@ import store from "../store/store";
 import "../styles/loading.css";
 import { DefaultSeo } from "next-seo";
 import DEFAULT_SEO from "../util/defaultSeo";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
