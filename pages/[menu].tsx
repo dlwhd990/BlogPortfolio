@@ -1,4 +1,5 @@
 import axios from "axios";
+import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import ArticleColumn from "../components/ArticleColumn/ArticleColumn";
@@ -20,6 +21,12 @@ const MenuPage = () => {
     subBottom: "",
     isBlog: true,
   });
+
+  const seoData = {
+    title: `이종혁의 블로그 - ${router.query.menu}`,
+    description: `${router.query.menu}에 대해 공부합니다.`,
+    canonical: `https://blog-portfolio-theta.vercel.app/${router.query.menu}`,
+  };
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -63,42 +70,45 @@ const MenuPage = () => {
   }, [router.query.page]);
 
   return (
-    <main className={styles.main}>
-      {pending && <Loader />}
-      {!pending && (
-        <>
-          <MainBanner bannerData={bannerData} />
-          <section className={styles.article_section}>
-            {articleList.length > 0 && (
-              <>
-                {articleList
-                  .slice((selectedPage - 1) * 12, selectedPage * 12)
-                  .map((article) => (
-                    <ArticleColumn
-                      key={article._id.toString()}
-                      article={article}
-                    />
-                  ))}
-                <Paging
-                  listLength={articleList.length}
-                  selectedPage={selectedPage}
-                  route={
-                    typeof router.query.menu === "string"
-                      ? router.query.menu
-                      : ""
-                  }
-                />
-              </>
-            )}
-            {articleList.length === 0 && (
-              <p className={styles.nothing_container}>
-                😂 아직 작성한 글이 없어요!
-              </p>
-            )}
-          </section>
-        </>
-      )}
-    </main>
+    <>
+      <main className={styles.main}>
+        {pending && <Loader />}
+        {!pending && (
+          <>
+            <NextSeo {...seoData} />
+            <MainBanner bannerData={bannerData} />
+            <section className={styles.article_section}>
+              {articleList.length > 0 && (
+                <>
+                  {articleList
+                    .slice((selectedPage - 1) * 12, selectedPage * 12)
+                    .map((article) => (
+                      <ArticleColumn
+                        key={article._id.toString()}
+                        article={article}
+                      />
+                    ))}
+                  <Paging
+                    listLength={articleList.length}
+                    selectedPage={selectedPage}
+                    route={
+                      typeof router.query.menu === "string"
+                        ? router.query.menu
+                        : ""
+                    }
+                  />
+                </>
+              )}
+              {articleList.length === 0 && (
+                <p className={styles.nothing_container}>
+                  😂 아직 작성한 글이 없어요!
+                </p>
+              )}
+            </section>
+          </>
+        )}
+      </main>
+    </>
   );
 };
 

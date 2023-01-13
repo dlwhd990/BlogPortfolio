@@ -1,15 +1,21 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faBars,
   faCaretDown,
-  faHeart,
+  faCloudMoon,
+  faHouse,
   faMagnifyingGlass,
-  faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { changeMenuState, changeSidebarState } from "../../store/toggle";
+import {
+  changeDarkModeState,
+  changeMenuState,
+  changeSidebarState,
+  closeSidebar,
+} from "../../store/toggle";
 import MenuPopup from "../MenuPopup/MenuPopup";
 import styles from "./Header.module.css";
 
@@ -17,6 +23,14 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const sidebarState = useAppSelector((state) => state.toggle.sidebar);
   const dispatch = useAppDispatch();
+
+  const dispatchCloseSidebar = () => {
+    dispatch(closeSidebar());
+  };
+
+  const darkModeHandler = () => {
+    dispatch(changeDarkModeState());
+  };
 
   const onMenuClickHandler = () => {
     dispatch(changeMenuState());
@@ -72,15 +86,32 @@ const Header = () => {
         </div>
         <ul className={styles.header_menu}>
           <li>
-            <Link href="https://card-study.vercel.app/" target="_blank">
-              <FontAwesomeIcon
-                icon={faWandMagicSparkles}
-                className={styles.icon_only}
-              />
+            <Link href="/">
+              <button onClick={dispatchCloseSidebar}>
+                <FontAwesomeIcon
+                  icon={faHouse}
+                  className={`${styles.icon_only} ${styles.icon_home}`}
+                />
+              </button>
             </Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faHeart} className={styles.icon_only} />
+            <Link target="_blank" href="https://github.com/dlwhd990">
+              <button onClick={dispatchCloseSidebar}>
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className={`${styles.icon_only} ${styles.icon_github}`}
+                />
+              </button>
+            </Link>
+          </li>
+          <li>
+            <button onClick={darkModeHandler}>
+              <FontAwesomeIcon
+                icon={faCloudMoon}
+                className={`${styles.icon_only} ${styles.icon_dark}`}
+              />
+            </button>
           </li>
         </ul>
       </nav>

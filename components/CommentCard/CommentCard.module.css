@@ -4,6 +4,19 @@
   padding: 2rem;
   border-radius: 6px;
   margin: 1rem 0;
+  transition: 400ms all ease-in-out;
+}
+
+.off {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.on {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .author {

@@ -54,6 +54,10 @@
   transition: 250ms all ease-in-out;
 }
 
+.icon_github {
+  font-size: 2.4rem;
+}
+
 .header_menu li:hover,
 .header_menu a:hover,
 .icon_only:hover {
@@ -111,8 +115,16 @@
 
 .on .header_menu a:hover,
 .on .header_menu li:hover,
-.on .icon_only:hover {
+.on .icon_home:hover {
   color: #ff8e9e;
+}
+
+.on .icon_github:hover {
+  color: var(--color-blue);
+}
+
+.on .icon_dark:hover {
+  color: #ffe15d;
 }
 
 .on .search {
@@ -157,6 +169,9 @@
   }
   .navbar ul {
     display: none;
+  }
+  .on {
+    background-color: white;
   }
 
   .search {

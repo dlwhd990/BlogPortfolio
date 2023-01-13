@@ -6,6 +6,10 @@ html {
   font-family: "Spoqa Han Sans Neo", sans-serif;
 }
 
+svg {
+  font-size: 62.5%;
+}
+
 * {
   margin: 0;
   padding: 0;
