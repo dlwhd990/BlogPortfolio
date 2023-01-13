@@ -25,20 +25,13 @@ const MenuPage = () => {
     if (!router.isReady) return;
 
     let q = router.query.menu;
-    let page;
 
     if (typeof q !== "string") {
       q = "";
     }
 
-    if (isNaN(Number(router.query.page))) {
-      page = 1;
-    } else {
-      page = Number(router.query.page);
-    }
-
     const menuData = findMenu(q);
-    setSelectedPage(page);
+
     setPending(true);
     setBannerData({
       subTop: menuData.category,
@@ -56,7 +49,18 @@ const MenuPage = () => {
     };
 
     getArticleList();
-  }, [router.isReady, router.query.menu, router.query.page]);
+  }, [router.isReady, router.query.menu]);
+
+  useEffect(() => {
+    let page;
+
+    if (isNaN(Number(router.query.page))) {
+      page = 1;
+    } else {
+      page = Number(router.query.page);
+    }
+    setSelectedPage(page);
+  }, [router.query.page]);
 
   return (
     <main className={styles.main}>

@@ -27,13 +27,11 @@ const Paging: React.FC<{
         return;
       }
       const prevDivision = pageDivision;
-      // selectPageCallBack((prevDivision - 1) * 5 + 5);
       router.push(`/${route}?page=${(prevDivision - 1) * 5 + 5}`);
       setPageDivision((state) => state - 1);
     } else {
       if ((pageDivision + 1) * 60 >= listLength) return;
       const prevDivision = pageDivision;
-      // selectPageCallBack((prevDivision + 1) * 5 + 1);
       router.push(`/${route}?page=${(prevDivision + 1) * 5 + 1}`);
       setPageDivision((state) => state + 1);
     }
