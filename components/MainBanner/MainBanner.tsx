@@ -17,7 +17,7 @@ const MainBanner: React.FC<{
         <h2>{subBottom}</h2>
       </div>
       {/* <Image src={bannerImage} alt="배경 이미지" /> */}
-      <video src="/images/divoom.mp4" autoPlay muted />
+      <video src="/images/divoom.mp4" autoPlay muted loop />
     </div>
   );
 };

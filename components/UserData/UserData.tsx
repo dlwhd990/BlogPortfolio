@@ -3,7 +3,7 @@ import { faCloudMoon, faHouse, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import profileImage from "../../public/images/d.gif";
+import profileImage from "../../public/images/choon.jpeg";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { changeDarkModeState, closeSidebar } from "../../store/toggle";
 import styles from "./UserData.module.css";

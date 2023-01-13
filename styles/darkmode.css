@@ -21,6 +21,10 @@
   background-color: #3f4244;
 }
 
+.dark .menu_item {
+  color: white;
+}
+
 .dark .menu_item:hover {
   background-color: var(--color-lightgray);
   color: white;
