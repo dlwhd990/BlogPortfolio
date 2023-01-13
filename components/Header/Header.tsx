@@ -50,7 +50,13 @@ const Header = () => {
         <MenuPopup />
         <ul className={styles.header_menu}>
           <li>
-            소개 <FontAwesomeIcon icon={faCaretDown} className={styles.icon} />
+            <Link
+              href="https://www.notion.so/4d3ee89e36cd463db8b8fe1d72333722"
+              target="_blank"
+            >
+              소개{" "}
+              <FontAwesomeIcon icon={faCaretDown} className={styles.icon} />
+            </Link>
           </li>
           <li onClick={onMenuClickHandler}>
             블로그{" "}

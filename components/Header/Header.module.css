@@ -39,6 +39,11 @@
   transition: 250ms all ease-in-out;
 }
 
+.header_menu a {
+  color: rgba(250, 250, 250, 0.6);
+  transition: 250ms all ease-in-out;
+}
+
 .icon {
   margin-left: 0.6rem;
 }
@@ -50,6 +55,7 @@
 }
 
 .header_menu li:hover,
+.header_menu a:hover,
 .icon_only:hover {
   color: white;
 }
@@ -92,16 +98,18 @@
 
 .on {
   height: 7rem;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   color: var(--color-black);
   transform: translateY(20px);
 }
 
-.on .header_menu {
+.on .header_menu,
+.on .header_menu a {
   color: var(--color-black);
 }
 
+.on .header_menu a:hover,
 .on .header_menu li:hover,
 .on .icon_only:hover {
   color: #ff8e9e;
