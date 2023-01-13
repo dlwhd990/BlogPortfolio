@@ -14,12 +14,12 @@ const ArticleColumn: React.FC<{ article: Article }> = ({ article }) => {
           <img src={coverImage} alt="게시글_이미지" loading="lazy" />
         </div>
         <div className={styles.data_container}>
-          <h2>자바스크립트의 동작 원리 - 1</h2>
+          <h2>{article.title}</h2>
           <p className={styles.content}>{previewContent}</p>
         </div>
         <div className={styles.bottom}>
           <p className={styles.date}>
-            {new Date(date + 1000 * 60 * 60 * 9).toISOString().slice(0, 10)}
+            {new Date(date).toISOString().slice(0, 10)}
           </p>
           <div className={styles.button_container}>
             <button className={styles.button}>

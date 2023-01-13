@@ -30,11 +30,13 @@
   font-size: 0.5px;
   border-radius: 50%;
   animation: blast 1s ease-in infinite;
+  -webkit-animation: blast 1s ease-in infinite;
 }
 .loader::after {
   font-size: 1px;
   background: var(--color-blue);
   animation: bounce 1s ease-in infinite;
+  -webkit-animation: bounce 1s ease-in infinite;
 }
 
 @keyframes bounce {

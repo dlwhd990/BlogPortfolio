@@ -1,55 +1,33 @@
 import axios from "axios";
+import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import ArticleColumn from "../components/ArticleColumn/ArticleColumn";
-import Loader from "../components/Loader/Loader";
-import MainBanner from "../components/MainBanner/MainBanner";
-import Paging from "../components/Paging/Paging";
-import Article from "../model/article";
-import styles from "../styles/menuPage.module.css";
-import { findMenu } from "../util/staticDatas/menu";
+import { useEffect, useState } from "react";
+import ArticleColumn from "../../components/ArticleColumn/ArticleColumn";
+import Loader from "../../components/Loader/Loader";
+import Paging from "../../components/Paging/Paging";
+import Article from "../../model/article";
+import styles from "../../styles/searchPage.module.css";
+import searchTopImage from "../../public/images/me.png";
 
-const MenuPage = () => {
+const SearchPage = () => {
   const router = useRouter();
   const [selectedPage, setSelectedPage] = useState(1);
   const [articleList, setArticleList] = useState<Article[]>([]);
   const [pending, setPending] = useState(true);
-  const [bannerData, setBannerData] = useState({
-    subTop: "",
-    title: "",
-    subBottom: "",
-    isBlog: true,
-  });
 
   useEffect(() => {
     if (!router.isReady) return;
 
-    let q = router.query.menu;
-
-    if (typeof q !== "string") {
-      q = "";
-    }
-
-    const menuData = findMenu(q);
-
-    setPending(true);
-    setBannerData({
-      subTop: menuData.category,
-      title: menuData.title,
-      subBottom: menuData.desc,
-      isBlog: true,
-    });
-
     const getArticleList = async () => {
-      const response = await axios.get(`/api/menu/${menuData.title}`);
+      const response = await axios.get(`/api/search/${router.query.query}`);
       if (response.data.success) {
-        setArticleList(response.data.result);
+        setArticleList(response.data.articleList);
       }
       setPending(false);
     };
 
     getArticleList();
-  }, [router.isReady, router.query.menu]);
+  }, [router.isReady, router.query.query]);
 
   useEffect(() => {
     let page;
@@ -68,7 +46,13 @@ const MenuPage = () => {
         {pending && <Loader />}
         {!pending && (
           <>
-            <MainBanner bannerData={bannerData} />
+            <div className={styles.top_banner}>
+              <div className={styles.data_container}>
+                <p className={styles.query}>{"'자바' 검색 결과"}</p>
+                <p className={styles.count}>검색 결과 8건</p>
+              </div>
+              <Image src={searchTopImage} alt="배너 이미지" />
+            </div>
             <section className={styles.article_section}>
               {articleList.length > 0 && (
                 <>
@@ -83,13 +67,13 @@ const MenuPage = () => {
                   <Paging
                     listLength={articleList.length}
                     selectedPage={selectedPage}
-                    route={`${router.query.menu}`}
+                    route={`search/${router.query.query}`}
                   />
                 </>
               )}
               {articleList.length === 0 && (
                 <p className={styles.nothing_container}>
-                  😂 아직 작성한 글이 없어요!
+                  😂 검색 결과가 없습니다!
                 </p>
               )}
             </section>
@@ -100,4 +84,4 @@ const MenuPage = () => {
   );
 };
 
-export default MenuPage;
+export default SearchPage;

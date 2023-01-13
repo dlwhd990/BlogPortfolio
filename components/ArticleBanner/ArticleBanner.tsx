@@ -17,7 +17,7 @@ const ArticleBanner: React.FC<{ article: Article }> = ({ article }) => {
           |
           <span>
             <FontAwesomeIcon icon={faCalendar} />{" "}
-            {new Date(date + 1000 * 60 * 60 * 9).toISOString().slice(0, 10)}
+            {new Date(date).toISOString().slice(0, 10)}
           </span>
         </p>
       </div>

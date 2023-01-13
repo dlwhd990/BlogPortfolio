@@ -94,6 +94,12 @@
 .search_icon {
   font-size: 2rem;
   color: var(--color-black);
+  cursor: pointer;
+  transition: 250ms all ease-in-out;
+}
+
+.search_icon:hover {
+  color: var(--color-blue);
 }
 
 .off {

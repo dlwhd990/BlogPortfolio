@@ -8,7 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   changeDarkModeState,
@@ -20,7 +21,9 @@ import MenuPopup from "../MenuPopup/MenuPopup";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
   const sidebarState = useAppSelector((state) => state.toggle.sidebar);
   const dispatch = useAppDispatch();
 
@@ -40,9 +43,19 @@ const Header = () => {
     dispatch(changeSidebarState());
   };
 
+  const changeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  };
+
+  const onSearchHandler = (e: React.FormEvent | React.MouseEvent) => {
+    e.preventDefault();
+    setSearchInput("");
+    router.push(`/search/${searchInput}?page=1`);
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
-      if (window.scrollY < 500) setScrolled(false);
+      if (window.scrollY < 430) setScrolled(false);
       else setScrolled(true);
     }, 200);
     return () => clearInterval(timer);
@@ -77,13 +90,20 @@ const Header = () => {
             <FontAwesomeIcon icon={faCaretDown} className={styles.icon} />
           </li>
         </ul>
-        <div className={styles.search}>
-          <input type="text" placeholder="검색" spellCheck="false" />
+        <form onSubmit={onSearchHandler} className={styles.search}>
+          <input
+            value={searchInput}
+            onChange={changeSearchInput}
+            type="text"
+            placeholder="검색"
+            spellCheck="false"
+          />
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             className={styles.search_icon}
+            onClick={onSearchHandler}
           />
-        </div>
+        </form>
         <ul className={styles.header_menu}>
           <li>
             <Link href="/">

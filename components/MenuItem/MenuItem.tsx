@@ -12,7 +12,7 @@ const MenuItem: React.FC<{ menu: Menu }> = ({ menu }) => {
   const moveToPath = () => {
     dispatch(closeMenu());
     dispatch(closeSidebar());
-    router.push(menu.path);
+    router.push(`/${menu.path}?page=1`);
   };
 
   return (
