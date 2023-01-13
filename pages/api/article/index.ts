@@ -9,7 +9,7 @@ export async function upload(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
       const response = await collection.insertOne({
         title: "자바스크립트의 동작 원리 - 1",
-        content: "",
+        content: ``,
         date: 1673488576082,
         category: "Programming",
         menuId: 0,

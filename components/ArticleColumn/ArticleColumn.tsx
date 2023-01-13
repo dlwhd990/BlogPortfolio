@@ -10,7 +10,9 @@ const ArticleColumn: React.FC<{ article: Article }> = ({ article }) => {
   return (
     <Link href={`/article/${_id.toString()}`}>
       <div className={styles.item}>
-        <img src={coverImage} alt="게시글_이미지" loading="lazy" />
+        <div className={styles.image_container}>
+          <img src={coverImage} alt="게시글_이미지" loading="lazy" />
+        </div>
         <div className={styles.data_container}>
           <h2>자바스크립트의 동작 원리 - 1</h2>
           <p className={styles.content}>{previewContent}</p>

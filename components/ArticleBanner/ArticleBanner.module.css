@@ -24,12 +24,16 @@
   color: white;
   margin-bottom: 2rem;
   padding: 0 2rem;
+  animation: 600ms appearFromLeft;
 }
 
 .data_container p {
   font-size: 1.8rem;
   color: white;
   padding: 0 2rem;
+  animation: 600ms appearFromRight;
+  animation-delay: 400ms;
+  animation-fill-mode: both;
 }
 
 .data_container span {
@@ -83,5 +87,27 @@
 @media screen and (max-width: 500px) {
   .data_container h1 {
     font-size: 2.6rem;
+  }
+}
+
+@keyframes appearFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes appearFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

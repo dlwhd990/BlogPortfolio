@@ -1,6 +1,4 @@
 import styles from "./ArticleBanner.module.css";
-import bannerImage from "../../public/images/abc.jpg";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faPen } from "@fortawesome/free-solid-svg-icons";
 import Article from "../../model/article";
