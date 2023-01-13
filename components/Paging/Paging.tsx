@@ -62,7 +62,7 @@ const Paging: React.FC<{
         {pageDivision * 5 * 12 < listLength && ( //
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 1 && `${styles.selected}`
+              selectedPage === pageDivision * 5 + 1 ? `${styles.selected}` : ""
             }`}
           >
             {pageDivision * 5 + 1}
@@ -71,7 +71,7 @@ const Paging: React.FC<{
         {(pageDivision * 5 + 1) * 12 < listLength && (
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 2 && `${styles.selected}`
+              selectedPage === pageDivision * 5 + 2 ? `${styles.selected}` : ""
             }`}
           >
             {pageDivision * 5 + 2}
@@ -80,7 +80,7 @@ const Paging: React.FC<{
         {(pageDivision * 5 + 2) * 12 < listLength && (
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 3 && `${styles.selected}`
+              selectedPage === pageDivision * 5 + 3 ? `${styles.selected}` : ""
             }`}
           >
             {pageDivision * 5 + 3}
@@ -89,7 +89,7 @@ const Paging: React.FC<{
         {(pageDivision * 5 + 3) * 12 < listLength && (
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 4 && `${styles.selected}`
+              selectedPage === pageDivision * 5 + 4 ? `${styles.selected}` : ""
             }`}
           >
             {pageDivision * 5 + 4}
@@ -98,7 +98,7 @@ const Paging: React.FC<{
         {(pageDivision * 5 + 4) * 12 < listLength && (
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 5 && `${styles.selected}`
+              selectedPage === pageDivision * 5 + 5 ? `${styles.selected}` : ""
             }`}
           >
             {pageDivision * 5 + 5}

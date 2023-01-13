@@ -36,4 +36,7 @@
     transform: translateX(-24rem);
     box-shadow: none;
   }
+  .menu_container {
+    padding-bottom: 10rem;
+  }
 }

@@ -23,7 +23,6 @@
   padding: 1rem;
   cursor: pointer;
   transition: 250ms all ease-in-out;
-  color: var(--color-black);
 }
 
 .paging_list li:hover,
@@ -38,10 +37,12 @@
 
 .left {
   margin-right: 0.5rem;
+  color: var(--color-black);
 }
 
 .right {
   margin-left: 0.5rem;
+  color: var(--color-black);
 }
 
 .selected {

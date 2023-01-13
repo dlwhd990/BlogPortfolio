@@ -1,0 +1,43 @@
+.card {
+  width: 76.8rem;
+  background-color: #f6f8fa;
+  padding: 2rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.author {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.content {
+  margin: 1.4rem 0 2.2rem 0;
+  font-size: 1.8rem;
+  white-space: pre-line;
+}
+
+.date {
+  font-size: 1.4rem;
+  color: var(--color-lightgray);
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    padding: 1.8rem;
+  }
+
+  .author {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    font-size: 1.6rem;
+    margin: 1.2rem 0 1.6rem 0;
+  }
+
+  .date {
+    font-size: 1.3rem;
+  }
+}

@@ -2,17 +2,18 @@
   position: absolute;
   width: calc(100% - 24rem);
   top: 60vh;
-  height: 100vh;
+  min-height: 100vh;
   background-color: white;
 }
 
 .main article {
-  width: 100rem;
-  padding: 10rem 0;
+  width: 76.8rem;
+  padding: 10rem 1.5rem;
   margin: auto;
   animation: 600ms appearFromTop;
   animation-delay: 600ms;
   animation-fill-mode: both;
+  border-bottom: 2px solid rgb(244, 241, 241);
 }
 
 .main article h1 {
@@ -66,7 +67,7 @@
 }
 
 .main article hr {
-  background: var(--color-pink);
+  background: rgb(232, 224, 224);
   height: 2px;
   border: 0;
 }
@@ -80,23 +81,67 @@
   list-style: initial;
 }
 
+.button_container {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.button_container button {
+  padding: 1.6rem 5rem;
+  border-radius: 32px;
+  border: 1px solid rgb(228, 216, 216);
+  font-size: 1.8rem;
+  transition: 250ms all ease-in-out;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
+.button_container button:hover {
+  background-color: var(--color-pink);
+  box-shadow: 0 0 10px var(--color-pink);
+  transform: translateY(-4px);
+}
+
+.button_container button svg {
+  color: var(--color-red);
+  font-size: 2rem;
+  margin-right: 0.7rem;
+}
+
+.comment_section {
+  width: 76.8rem;
+  margin: auto;
+  padding: 5rem 0 10rem 0;
+}
+
+.comment_count {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+
 @media screen and (max-width: 1400px) {
   .article_section {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 768px) {
   .main article {
     width: 100%;
-    padding-left: 5rem;
-    padding-right: 5rem;
+  }
+
+  .comment_section {
+    width: 100%;
+    padding: 4rem 1.5rem 10rem 1.5rem;
   }
 }
 
 @media screen and (max-width: 700px) {
   .main article {
-    padding: 3rem 2rem;
+    padding: 3rem 1.5rem;
   }
 
   .main article h1 {

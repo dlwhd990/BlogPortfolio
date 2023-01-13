@@ -22,8 +22,11 @@ ul {
   list-style: none;
 }
 
-input {
+input,
+textarea {
   font-family: "Spoqa Han Sans Neo", sans-serif;
+  color: var(--color-black);
+  outline: none;
 }
 
 p,
