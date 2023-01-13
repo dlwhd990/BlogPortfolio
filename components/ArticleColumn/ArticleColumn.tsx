@@ -1,5 +1,6 @@
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
 import Article from "../../model/article";
 import styles from "./ArticleColumn.module.css";
@@ -11,7 +12,15 @@ const ArticleColumn: React.FC<{ article: Article }> = ({ article }) => {
     <Link href={`/article/${_id.toString()}`}>
       <div className={`article_column ${styles.item}`}>
         <div className={styles.image_container}>
-          <img src={coverImage} alt="게시글_이미지" loading="lazy" />
+          {/* <img src={coverImage} alt="게시글_이미지" loading="lazy" /> */}
+          <Image
+            src={coverImage}
+            width={100}
+            height={100}
+            className={styles.image}
+            loading="lazy"
+            alt="게시글_이미지"
+          />
         </div>
         <div className={styles.data_container}>
           <h2>{article.title}</h2>
