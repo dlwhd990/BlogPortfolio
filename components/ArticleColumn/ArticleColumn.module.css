@@ -6,6 +6,7 @@
   margin: calc(10rem / 6);
   cursor: pointer;
   transition: 250ms all ease-in-out;
+  background-color: white;
 }
 
 .item:hover {

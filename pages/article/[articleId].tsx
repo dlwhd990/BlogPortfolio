@@ -52,8 +52,12 @@ const ArticlePage: React.FC<{ article: Article; seoData: object }> = ({
         {article && (
           <>
             <ArticleBanner article={article} />
-            <section className={styles.article_section}>
-              <div className={styles.warning_container}>
+            <section
+              className={`article_page_article_section ${styles.article_section}`}
+            >
+              <div
+                className={`article_page_warning_container ${styles.warning_container}`}
+              >
                 <p className={styles.warning_top}>
                   <span>⚠️</span>주의
                 </p>
@@ -62,6 +66,7 @@ const ArticlePage: React.FC<{ article: Article; seoData: object }> = ({
                 </p>
               </div>
               <article
+                className="article_page_article"
                 dangerouslySetInnerHTML={{ __html: article.content }}
               ></article>
               {/* <div className={styles.button_container}>

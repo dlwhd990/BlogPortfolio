@@ -12,7 +12,7 @@ const MenuPopup = () => {
 
   return (
     <div
-      className={`${styles.menu_popup} ${
+      className={`menu_popup ${styles.menu_popup} ${
         menuState ? `${styles.on}` : `${styles.off}`
       }`}
     >

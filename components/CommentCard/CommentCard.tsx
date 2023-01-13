@@ -27,7 +27,7 @@ const CommentCard: React.FC<{ comment: Comment }> = ({ comment }) => {
 
   return (
     <div
-      className={`${styles.card} ${
+      className={`comment_card ${styles.card} ${
         intersecting ? `${styles.on}` : `${styles.off}`
       }`}
       ref={introRef}

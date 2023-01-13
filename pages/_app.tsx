@@ -9,6 +9,7 @@ import { DefaultSeo } from "next-seo";
 import DEFAULT_SEO from "../util/defaultSeo";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import "../styles/darkmode.css";
 config.autoAddCss = false;
 
 export default function App({ Component, pageProps }: AppProps) {

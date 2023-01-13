@@ -1,0 +1,100 @@
+.dark,
+.dark p,
+.dark h1,
+.dark h2 {
+  color: white;
+}
+
+.dark .sidebar {
+  background-color: var(--color-black);
+}
+
+.dark .user_data_button_container {
+  background-color: var(--color-lightgray);
+}
+
+.dark .menu_main {
+  background-color: var(--color-black);
+}
+
+.dark .article_column {
+  background-color: #3f4244;
+}
+
+.dark .menu_item:hover {
+  background-color: var(--color-lightgray);
+  color: white;
+}
+
+.dark .paging_arrow {
+  color: white;
+}
+
+.dark .article_page_article_section {
+  background-color: var(--color-black);
+}
+
+.dark .article_page_warning_container {
+  background-color: var(--color-lightgray);
+}
+
+.dark .comment_card {
+  background-color: var(--color-lightgray);
+}
+
+.dark .menu_popup {
+  background-color: var(--color-black);
+}
+
+.dark .menu_popup li {
+  color: white;
+}
+
+.dark .search_page_main {
+  background-color: var(--color-black);
+}
+
+/* Header 부분 */
+.dark .header_on {
+  background-color: rgba(47, 52, 56, 0.9);
+}
+
+.dark .header_on form {
+  background-color: white;
+}
+
+.dark .header_on .header_search:focus-within {
+  background-color: white;
+}
+
+.dark .header_on .header_search svg {
+  color: var(--color-black);
+}
+
+.dark .header_on .header_search svg:hover {
+  color: var(--color-blue);
+}
+
+.dark .header_on li,
+.dark .header_on a,
+.dark .header_on button svg {
+  color: white;
+}
+
+/* article 구성 부분*/
+.dark .article_page_article h1,
+.dark .article_page_article h2,
+.dark .article_page_article h3,
+.dark .article_page_article h4,
+.dark .article_page_article h5,
+.dark .article_page_article h6,
+.dark .article_page_article p,
+.dark .article_page_article li {
+  color: white;
+}
+
+@media screen and (max-width: 1150px) {
+  .dark .header_on {
+    background-color: var(--color-black);
+  }
+}

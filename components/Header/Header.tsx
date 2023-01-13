@@ -5,6 +5,7 @@ import {
   faCloudMoon,
   faHouse,
   faMagnifyingGlass,
+  faSun,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -25,7 +26,19 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const sidebarState = useAppSelector((state) => state.toggle.sidebar);
+  const darkModeState = useAppSelector((state) => state.toggle.darkMode);
   const dispatch = useAppDispatch();
+
+  const darkModeButtonSelector = () => {
+    if (darkModeState) return faSun;
+    else return faCloudMoon;
+  };
+
+  const darkModeClassSelector = () => {
+    if (darkModeState)
+      return `${styles.icon_only} ${styles.icon_dark} ${styles.sun}`;
+    else return `${styles.icon_only} ${styles.icon_dark} ${styles.moon}`;
+  };
 
   const dispatchCloseSidebar = () => {
     dispatch(closeSidebar());
@@ -49,6 +62,9 @@ const Header = () => {
 
   const onSearchHandler = (e: React.FormEvent | React.MouseEvent) => {
     e.preventDefault();
+    if (searchInput.length <= 1) {
+      // 2글자 이상 입력 안내
+    }
     setSearchInput("");
     router.push(`/search/${searchInput}?page=1`);
   };
@@ -65,7 +81,9 @@ const Header = () => {
     <header className={styles.header}>
       <nav
         className={`${styles.navbar} ${
-          scrolled || sidebarState ? `${styles.on}` : `${styles.off}`
+          scrolled || sidebarState
+            ? `${styles.on} header_on`
+            : `${styles.off} header_off`
         }`}
       >
         <button
@@ -90,7 +108,10 @@ const Header = () => {
             <FontAwesomeIcon icon={faCaretDown} className={styles.icon} />
           </li>
         </ul>
-        <form onSubmit={onSearchHandler} className={styles.search}>
+        <form
+          onSubmit={onSearchHandler}
+          className={`header_search ${styles.search}`}
+        >
           <input
             value={searchInput}
             onChange={changeSearchInput}
@@ -128,8 +149,8 @@ const Header = () => {
           <li>
             <button onClick={darkModeHandler}>
               <FontAwesomeIcon
-                icon={faCloudMoon}
-                className={`${styles.icon_only} ${styles.icon_dark}`}
+                icon={darkModeButtonSelector()}
+                className={darkModeClassSelector()}
               />
             </button>
           </li>

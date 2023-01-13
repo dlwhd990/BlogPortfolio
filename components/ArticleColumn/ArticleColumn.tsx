@@ -9,7 +9,7 @@ const ArticleColumn: React.FC<{ article: Article }> = ({ article }) => {
     article;
   return (
     <Link href={`/article/${_id.toString()}`}>
-      <div className={styles.item}>
+      <div className={`article_column ${styles.item}`}>
         <div className={styles.image_container}>
           <img src={coverImage} alt="게시글_이미지" loading="lazy" />
         </div>

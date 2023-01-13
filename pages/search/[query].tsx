@@ -42,14 +42,18 @@ const SearchPage = () => {
 
   return (
     <>
-      <main className={styles.main}>
+      <main className={`search_page_main ${styles.main}`}>
         {pending && <Loader />}
         {!pending && (
           <>
             <div className={styles.top_banner}>
               <div className={styles.data_container}>
-                <p className={styles.query}>{"'자바' 검색 결과"}</p>
-                <p className={styles.count}>검색 결과 8건</p>
+                <p
+                  className={styles.query}
+                >{`'${router.query.query}' 검색 결과`}</p>
+                <p
+                  className={styles.count}
+                >{`검색 결과 ${articleList.length}건`}</p>
               </div>
               <Image src={searchTopImage} alt="배너 이미지" />
             </div>

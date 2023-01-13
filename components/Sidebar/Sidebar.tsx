@@ -12,7 +12,7 @@ const Sidebar = () => {
   const sidebarState = useAppSelector((state) => state.toggle.sidebar);
   return (
     <aside
-      className={`${styles.sidebar} ${
+      className={`sidebar ${styles.sidebar} ${
         sidebarState ? `${styles.on} ` : `${styles.off}`
       }`}
     >

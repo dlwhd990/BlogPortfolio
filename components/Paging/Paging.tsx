@@ -54,7 +54,7 @@ const Paging: React.FC<{
       <button>
         <FontAwesomeIcon
           icon={faAngleLeft}
-          className={styles.left}
+          className={`paging_arrow ${styles.left}`}
           onClick={() => changeDivision(true)}
         />
       </button>
@@ -108,7 +108,7 @@ const Paging: React.FC<{
       <button>
         <FontAwesomeIcon
           icon={faAngleRight}
-          className={styles.right}
+          className={`paging_arrow ${styles.right}`}
           onClick={() => changeDivision(false)}
         />
       </button>

@@ -64,7 +64,7 @@ const MenuPage = () => {
 
   return (
     <>
-      <main className={styles.main}>
+      <main className={`menu_main ${styles.main}`}>
         {pending && <Loader />}
         {!pending && (
           <>
