@@ -11,28 +11,10 @@ import Comment from "../../model/comment";
 import styles from "../../styles/articlePage.module.css";
 import { connectToDatabase } from "../../util/mongodb";
 
-const ArticlePage: React.FC<{ article: Article }> = ({ article }) => {
-  const seoData = {
-    title: `${article.title} - 이종혁의 블로그`,
-    description: `${article.previewContent}`,
-    canonical: `https://blog-portfolio-theta.vercel.app/article/${article._id.toString()}`,
-    openGraph: {
-      type: "website",
-      locale: "ko_KR",
-      url: `https://blog-portfolio-theta.vercel.app/article/${article._id.toString()}`,
-      title: `${article.title} - 이종혁의 블로그`,
-      site_name: "개발자 이종혁의 블로그입니다.",
-      images: [
-        {
-          url: `${article.coverImage}`,
-          width: 285,
-          height: 167,
-          alt: "이미지",
-        },
-      ],
-    },
-  };
-
+const ArticlePage: React.FC<{ article: Article; seoData: object }> = ({
+  article,
+  seoData,
+}) => {
   const [commentList, setCommentList] = useState<Comment[]>([]);
 
   const loadCommentList = async () => {
@@ -130,9 +112,35 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     ),
   });
 
+  let seoData = {};
+
+  if (article) {
+    seoData = {
+      title: `${article.title} - 이종혁의 블로그`,
+      description: `${article.previewContent}`,
+      canonical: `https://blog-portfolio-theta.vercel.app/article/${article._id.toString()}`,
+      openGraph: {
+        type: "website",
+        locale: "ko_KR",
+        url: `https://blog-portfolio-theta.vercel.app/article/${article._id.toString()}`,
+        title: `${article.title} - 이종혁의 블로그`,
+        site_name: "개발자 이종혁의 블로그입니다.",
+        images: [
+          {
+            url: `${article.coverImage}`,
+            width: 285,
+            height: 167,
+            alt: "이미지",
+          },
+        ],
+      },
+    };
+  }
+
   return {
     props: {
       article: JSON.parse(JSON.stringify(article)),
+      seoData,
     },
   };
 }
