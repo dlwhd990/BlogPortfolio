@@ -53,6 +53,14 @@ const ArticlePage: React.FC<{ article: Article; seoData: object }> = ({
           <>
             <ArticleBanner article={article} />
             <section className={styles.article_section}>
+              <div className={styles.warning_container}>
+                <p className={styles.warning_top}>
+                  <span>⚠️</span>주의
+                </p>
+                <p>
+                  {`이 블로그는 단순히 저의 공부 내용을 기록하는 공간입니다.\n따라서, 정확한 정보가 아닐 수 있다는 점을 미리 알려드립니다.\n만약 잘못된 정보를 발견하셨다면 댓글로 알려주시면 감사하겠습니다! ☺️`}
+                </p>
+              </div>
               <article
                 dangerouslySetInnerHTML={{ __html: article.content }}
               ></article>
