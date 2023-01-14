@@ -1,4 +1,4 @@
-type Article = {
+interface Article {
   _id: object;
   title: string;
   content: string;
@@ -9,6 +9,6 @@ type Article = {
   likeCount: number;
   coverImage: string;
   previewContent: string;
-};
+}
 
 export default Article;

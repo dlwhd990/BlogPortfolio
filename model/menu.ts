@@ -1,6 +1,6 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
-type Menu = {
+interface Menu {
   id: number;
   categoryId: number;
   category: string;
@@ -8,6 +8,6 @@ type Menu = {
   path: string;
   icon: IconDefinition;
   desc: string;
-};
+}
 
 export default Menu;
