@@ -81,6 +81,10 @@
   line-height: 4rem;
 }
 
+.main article a {
+  color: #9fd9f2;
+}
+
 .main article pre {
   width: 100%;
   overflow-x: scroll;
@@ -94,17 +98,18 @@
 }
 
 .main article p {
-  line-height: 2.6rem;
+  line-height: 1.7;
 }
 
 .main article hr {
-  background: rgb(232, 224, 224);
+  background: rgb(242, 236, 236);
   height: 2px;
   border: 0;
+  margin: 2rem 0;
 }
 
 .main article ol {
-  padding-left: 3rem;
+  padding-left: 2rem;
 }
 
 .main article ul {

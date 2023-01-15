@@ -53,3 +53,7 @@
 .programmers {
   color: #ecc5fb;
 }
+
+.project {
+  color: var(--color-mint);
+}

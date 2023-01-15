@@ -5,6 +5,10 @@
   color: white;
 }
 
+.dark a {
+  color: var(--color-blue);
+}
+
 .dark .sidebar {
   background-color: var(--color-black);
 }

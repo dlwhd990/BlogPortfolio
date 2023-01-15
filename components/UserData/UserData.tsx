@@ -34,7 +34,7 @@ const UserData = () => {
   return (
     <div className={styles.user}>
       <div className={styles.data_container}>
-        <Image src={profileImage} alt="프로필 이미지" />
+        <Image src={profileImage} alt="프로필 이미지" priority />
         <p className={styles.name}>이종혁</p>
         <p className={styles.desc}>DEV 🐻</p>
       </div>

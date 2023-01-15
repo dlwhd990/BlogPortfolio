@@ -1,4 +1,5 @@
 import { faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons";
+import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
   faCode,
   faComputer,
@@ -136,6 +137,15 @@ export const menuList: Menu[] = [
     path: "/programmers",
     icon: faCode,
     desc: "프로그래머스 문제 풀이 과정",
+  },
+  {
+    id: 14,
+    categoryId: 0,
+    category: "Programming",
+    title: "프로젝트",
+    path: "/project",
+    icon: faWindowMaximize,
+    desc: "제가 진행한 프로젝트입니다.",
   },
 ];
 
