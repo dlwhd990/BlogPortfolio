@@ -22,8 +22,13 @@ const ArticleBanner: React.FC<{ article: Article }> = ({ article }) => {
           </span>
         </p>
       </div>
-      {/* <img src={coverImage} alt="배경 이미지" /> */}
-      <Image src={coverImage} width={100} height={100} alt="배경이미지" />
+      <Image
+        src={coverImage}
+        width={100}
+        height={100}
+        alt="배경이미지"
+        unoptimized={true}
+      />
     </div>
   );
 };

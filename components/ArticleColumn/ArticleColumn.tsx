@@ -20,6 +20,7 @@ const ArticleColumn: React.FC<{ article: Article }> = ({ article }) => {
             className={styles.image}
             loading="lazy"
             alt="게시글_이미지"
+            unoptimized={true}
           />
         </div>
         <div className={styles.data_container}>
