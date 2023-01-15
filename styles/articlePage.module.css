@@ -39,7 +39,7 @@
 
 .main article {
   width: 76.8rem;
-  padding: 0 1.5rem 10rem 1.5rem;
+  padding-bottom: 10rem;
   margin: auto;
   animation: 600ms appearFromTop;
   animation-delay: 600ms;
@@ -167,6 +167,8 @@
 @media screen and (max-width: 768px) {
   .main article {
     width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .warning_container {
