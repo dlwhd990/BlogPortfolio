@@ -9,6 +9,8 @@ import Article from "../../model/article";
 import styles from "../../styles/searchPage.module.css";
 import searchTopImage from "../../public/images/me.png";
 
+const itemsPerPage = 12; // 페이지의 필요에 따라 유동적으로 변경
+
 const SearchPage = () => {
   const router = useRouter();
   const [selectedPage, setSelectedPage] = useState(1);
@@ -61,7 +63,10 @@ const SearchPage = () => {
               {articleList.length > 0 && (
                 <>
                   {articleList
-                    .slice((selectedPage - 1) * 12, selectedPage * 12)
+                    .slice(
+                      (selectedPage - 1) * itemsPerPage,
+                      selectedPage * itemsPerPage
+                    )
                     .map((article) => (
                       <ArticleColumn
                         key={article._id.toString()}
@@ -70,8 +75,8 @@ const SearchPage = () => {
                     ))}
                   <Paging
                     listLength={articleList.length}
-                    selectedPage={selectedPage}
                     route={`search/${router.query.query}`}
+                    itemsPerPage={itemsPerPage}
                   />
                 </>
               )}

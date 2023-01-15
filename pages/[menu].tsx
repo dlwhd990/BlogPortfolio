@@ -9,6 +9,8 @@ import Article from "../model/article";
 import styles from "../styles/menuPage.module.css";
 import { findMenu } from "../util/staticDatas/menu";
 
+const itemsPerPage = 12; // 페이지의 필요에 따라 유동적으로 변경
+
 const MenuPage = () => {
   const router = useRouter();
   const [selectedPage, setSelectedPage] = useState(1);
@@ -73,7 +75,10 @@ const MenuPage = () => {
               {articleList.length > 0 && (
                 <>
                   {articleList
-                    .slice((selectedPage - 1) * 12, selectedPage * 12)
+                    .slice(
+                      (selectedPage - 1) * itemsPerPage,
+                      selectedPage * itemsPerPage
+                    )
                     .map((article) => (
                       <ArticleColumn
                         key={article._id.toString()}
@@ -82,8 +87,8 @@ const MenuPage = () => {
                     ))}
                   <Paging
                     listLength={articleList.length}
-                    selectedPage={selectedPage}
                     route={`${router.query.menu}`}
+                    itemsPerPage={itemsPerPage}
                   />
                 </>
               )}

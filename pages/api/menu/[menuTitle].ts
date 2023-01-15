@@ -10,7 +10,7 @@ export async function getArticleListByMenuId(
     const db = await connectToDatabase();
     const collection = db.collection("article");
     const result = await collection.find({ menu: menuTitle }).toArray();
-    res.json({ success: true, result });
+    res.json({ success: true, result: result.sort((a, b) => b.date - a.date) });
   } catch (err) {
     res.json({ success: false });
   }

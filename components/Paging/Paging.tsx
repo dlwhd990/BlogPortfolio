@@ -6,9 +6,9 @@ import styles from "./Paging.module.css";
 
 const Paging: React.FC<{
   listLength: number;
-  selectedPage: number;
   route: string;
-}> = ({ listLength, selectedPage, route }) => {
+  itemsPerPage: number;
+}> = ({ listLength, route, itemsPerPage }) => {
   const router = useRouter();
   const [pageDivision, setPageDivision] = useState(0);
 
@@ -30,7 +30,7 @@ const Paging: React.FC<{
       router.push(`/${route}?page=${(prevDivision - 1) * 5 + 5}`);
       setPageDivision((state) => state - 1);
     } else {
-      if ((pageDivision + 1) * 60 >= listLength) return;
+      if ((pageDivision + 1) * 5 * itemsPerPage >= listLength) return;
       const prevDivision = pageDivision;
       router.push(`/${route}?page=${(prevDivision + 1) * 5 + 1}`);
       setPageDivision((state) => state + 1);
@@ -59,46 +59,56 @@ const Paging: React.FC<{
         />
       </button>
       <ul className={styles.paging_list} onClick={selectPage}>
-        {pageDivision * 5 * 12 < listLength && ( //
+        {pageDivision * 5 * itemsPerPage < listLength && ( //
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 1 ? `${styles.selected}` : ""
+              parseInt(router.query.page as string) === pageDivision * 5 + 1
+                ? `${styles.selected}`
+                : ""
             }`}
           >
             {pageDivision * 5 + 1}
           </li>
         )}
-        {(pageDivision * 5 + 1) * 12 < listLength && (
+        {(pageDivision * 5 + 1) * itemsPerPage < listLength && (
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 2 ? `${styles.selected}` : ""
+              parseInt(router.query.page as string) === pageDivision * 5 + 2
+                ? `${styles.selected}`
+                : ""
             }`}
           >
             {pageDivision * 5 + 2}
           </li>
         )}
-        {(pageDivision * 5 + 2) * 12 < listLength && (
+        {(pageDivision * 5 + 2) * itemsPerPage < listLength && (
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 3 ? `${styles.selected}` : ""
+              parseInt(router.query.page as string) === pageDivision * 5 + 3
+                ? `${styles.selected}`
+                : ""
             }`}
           >
             {pageDivision * 5 + 3}
           </li>
         )}
-        {(pageDivision * 5 + 3) * 12 < listLength && (
+        {(pageDivision * 5 + 3) * itemsPerPage < listLength && (
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 4 ? `${styles.selected}` : ""
+              parseInt(router.query.page as string) === pageDivision * 5 + 4
+                ? `${styles.selected}`
+                : ""
             }`}
           >
             {pageDivision * 5 + 4}
           </li>
         )}
-        {(pageDivision * 5 + 4) * 12 < listLength && (
+        {(pageDivision * 5 + 4) * itemsPerPage < listLength && (
           <li
             className={`${
-              selectedPage === pageDivision * 5 + 5 ? `${styles.selected}` : ""
+              parseInt(router.query.page as string) === pageDivision * 5 + 5
+                ? `${styles.selected}`
+                : ""
             }`}
           >
             {pageDivision * 5 + 5}
