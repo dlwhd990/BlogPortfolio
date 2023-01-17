@@ -14,23 +14,29 @@ const bannerData = {
 };
 
 const HomePage = () => {
+  const [pending, setPending] = useState(false);
   const [articleList, setArticleList] = useState<Article[]>([]);
   useEffect(() => {
     const getArticleList = async () => {
       const response = await axios.get("/api/article/latest");
       if (response.data.success) {
         setArticleList(response.data.result);
+        setPending(true);
       }
     };
     getArticleList();
   }, []);
 
   return (
-    <main className={styles.main}>
-      <MainBanner bannerData={bannerData} />
-      <HomeSection title="최신글" subtitle="따끈따끈한 글입니다.">
-        <ArticleList articleList={articleList} cardType="mini" />
-      </HomeSection>
+    <main className={`homepage ${styles.main}`}>
+      {pending && (
+        <>
+          <MainBanner bannerData={bannerData} />
+          <HomeSection title="최신글" subtitle="따끈따끈한 글입니다.">
+            <ArticleList articleList={articleList} cardType="mini" />
+          </HomeSection>
+        </>
+      )}
     </main>
   );
 };

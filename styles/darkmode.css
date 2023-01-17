@@ -1,7 +1,9 @@
 .dark,
 .dark p,
 .dark h1,
-.dark h2 {
+.dark h2,
+.dark h3,
+.dark h4 {
   color: white;
 }
 
@@ -87,6 +89,10 @@
 .dark .header_on a,
 .dark .header_on button svg {
   color: white;
+}
+
+.dark .homepage {
+  background-color: var(--color-black);
 }
 
 /* article 구성 부분*/
