@@ -25,6 +25,17 @@
 @media screen and (max-width: 1150px) {
   .home_section {
     width: 70rem;
+    padding: 4rem 0;
+  }
+
+  .title {
+    font-size: 2.6rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1rem 0 2rem 0;
   }
 }
 
