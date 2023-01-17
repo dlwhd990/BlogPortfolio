@@ -24,6 +24,7 @@ const CommentBox: React.FC<{
     const response = await axios.post(`/api/like/${articleId}`);
     if (response.data.success) {
       setNewLikeCount((state) => state + 1);
+      dispatch(popupToast("좋아요 감사합니다!"));
     }
   };
 
@@ -36,6 +37,7 @@ const CommentBox: React.FC<{
     const response = await axios.post(`/api/comment/${articleId}`, { content });
     console.log(response.data);
     if (response.data.success) {
+      dispatch(popupToast("댓글 감사합니다!"));
       loadCommentList();
       setContent("");
     }

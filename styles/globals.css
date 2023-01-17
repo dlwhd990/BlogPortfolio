@@ -50,11 +50,11 @@ a {
 }
 
 code {
-  color: rgb(97, 175, 239);
+  color: #8250df;
 }
 
 code .hljs-keyword {
-  color: rgb(198, 121, 221);
+  color: #cf222e;
 }
 
 .hljs-function {

@@ -1,16 +1,16 @@
 const DEFAULT_SEO = {
   title: "이종혁의 블로그",
   description: "개발자 이종혁의 블로그입니다.",
-  canonical: "https://blog-portfolio-theta.vercel.app/",
+  canonical: "https://blog.dlwhd990.vercel.app/",
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://blog-portfolio-theta.vercel.app/",
+    url: "https://blog.dlwhd990.vercel.app/",
     title: "이종혁의 블로그",
     site_name: "개발자 이종혁의 블로그입니다.",
     images: [
       {
-        url: "https://blog-portfolio-theta.vercel.app/images/ff.jpg",
+        url: "https://blog.dlwhd990.vercel.app/images/ff.jpg",
         width: 285,
         height: 167,
         alt: "이미지",

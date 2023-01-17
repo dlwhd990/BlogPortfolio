@@ -131,11 +131,11 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     seoData = {
       title: `${article.title} - 이종혁의 블로그`,
       description: `${article.previewContent}`,
-      canonical: `https://blog-portfolio-theta.vercel.app/article/${article._id.toString()}`,
+      canonical: `https://blog.dlwhd990.vercel.app/article/${article._id.toString()}`,
       openGraph: {
         type: "website",
         locale: "ko_KR",
-        url: `https://blog-portfolio-theta.vercel.app/article/${article._id.toString()}`,
+        url: `https://blog.dlwhd990.vercel.app/article/${article._id.toString()}`,
         title: `${article.title} - 이종혁의 블로그`,
         site_name: "개발자 이종혁의 블로그입니다.",
         images: [
