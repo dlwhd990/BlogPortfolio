@@ -33,7 +33,9 @@ const CommentCard: React.FC<{ comment: Comment }> = ({ comment }) => {
       ref={introRef}
     >
       <p className={styles.author}>비회원</p>
-      <p className={styles.content}>{comment.content}</p>
+      <p className={styles.content}>
+        {comment.public ? `${comment.content}` : "승인 대기 중인 댓글입니다."}
+      </p>
       <p className={styles.date}>
         {new Date(comment.date).toISOString().slice(0, 10)}
       </p>

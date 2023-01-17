@@ -3,6 +3,7 @@ interface Comment {
   articleId: string;
   content: string;
   date: number;
+  public: boolean;
 }
 
 export default Comment;

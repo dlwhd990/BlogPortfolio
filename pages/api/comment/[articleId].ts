@@ -17,6 +17,7 @@ export async function commentAPI(req: NextApiRequest, res: NextApiResponse) {
         articleId,
         content,
         date: new Date().getTime() + 60 * 60 * 9 * 1000,
+        public: false,
       });
 
       const articlePromise = articleCollection.findOneAndUpdate(
