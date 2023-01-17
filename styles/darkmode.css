@@ -108,6 +108,19 @@
   background-color: rgb(112, 110, 110);
 }
 
+.dark .article_page_article blockquote {
+  min-height: 2rem;
+  border-color: var(--color-lightgray);
+  padding: 0 2rem;
+  margin: 1.4rem 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.dark .article_page_article blockquote p {
+  color: white;
+}
+
 @media screen and (max-width: 1150px) {
   .dark .header_on {
     background-color: var(--color-black);
