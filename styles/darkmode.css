@@ -95,10 +95,13 @@
 .dark .article_page_article h3,
 .dark .article_page_article h4,
 .dark .article_page_article h5,
-.dark .article_page_article h6,
+.dark .article_page_article h6 {
+  color: white;
+}
+
 .dark .article_page_article p,
 .dark .article_page_article li {
-  color: white;
+  color: #ececec;
 }
 
 .dark .article_page_article hr {

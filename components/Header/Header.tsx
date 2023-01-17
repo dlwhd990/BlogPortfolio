@@ -64,6 +64,7 @@ const Header = () => {
     e.preventDefault();
     if (searchInput.length <= 1) {
       // 2글자 이상 입력 안내
+      return;
     }
     setSearchInput("");
     router.push(`/search/${searchInput}?page=1`);

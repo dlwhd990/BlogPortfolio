@@ -155,6 +155,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       article: JSON.parse(JSON.stringify(article)),
       seoData,
     },
+    revalidate: 10,
   };
 }
 
