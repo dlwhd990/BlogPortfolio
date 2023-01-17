@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { menu: false, sidebar: false, darkMode: false };
+const initialState = {
+  menu: false,
+  sidebar: false,
+  darkMode: false,
+};
 
 const toggleSlice = createSlice({
   name: "toggle",

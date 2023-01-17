@@ -2,6 +2,8 @@ import { faHeart, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useState } from "react";
+import { useAppDispatch } from "../../store/hooks";
+import { popupToast } from "../../store/toast";
 import styles from "./CommentBox.module.css";
 
 const CommentBox: React.FC<{
@@ -9,6 +11,7 @@ const CommentBox: React.FC<{
   articleId: string;
   loadCommentList: () => void;
 }> = ({ likeCount, articleId, loadCommentList }) => {
+  const dispatch = useAppDispatch();
   const [newLikeCount, setNewLikeCount] = useState(0);
   const [content, setContent] = useState("");
 
@@ -26,8 +29,10 @@ const CommentBox: React.FC<{
 
   const onSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
-    // 나중에 alert 추가해서 알림 띄우기 (안된다고)
-    if (content.length === 0 || content.length > 500) return;
+    if (content.length === 0 || content.length > 500) {
+      dispatch(popupToast("한 글자 이상 입력해주세요!"));
+      return;
+    }
     const response = await axios.post(`/api/comment/${articleId}`, { content });
     console.log(response.data);
     if (response.data.success) {

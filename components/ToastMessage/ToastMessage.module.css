@@ -1,0 +1,34 @@
+.toast {
+  position: fixed;
+  top: 10rem;
+  left: calc(50% + 12rem);
+  transform: translateX(-50%);
+  padding: 0.9rem 2rem;
+  background-color: #f4bcc3;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  z-index: 6;
+}
+
+.toast p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: white;
+}
+
+.off {
+  visibility: collapse;
+  transform: translate(-50%, -10px);
+}
+
+.on {
+  visibility: visible;
+  transform: translate(-50%, 0px);
+  transition: 300ms all ease-in-out;
+}
+
+@media screen and (max-width: 1500px) {
+  .toast {
+    transform: translateX(-50%);
+  }
+}

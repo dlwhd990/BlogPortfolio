@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { popupToast } from "../../store/toast";
 import {
   changeDarkModeState,
   changeMenuState,
@@ -63,7 +64,7 @@ const Header = () => {
   const onSearchHandler = (e: React.FormEvent | React.MouseEvent) => {
     e.preventDefault();
     if (searchInput.length <= 1) {
-      // 2글자 이상 입력 안내
+      dispatch(popupToast("최소 2글자 이상이어야 합니다!"));
       return;
     }
     setSearchInput("");
