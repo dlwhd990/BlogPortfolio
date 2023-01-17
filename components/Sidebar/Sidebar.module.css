@@ -19,7 +19,7 @@
   padding: 2rem;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
   .sidebar {
     transform: translateX(-24rem);
     box-shadow: none;

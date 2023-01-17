@@ -2,12 +2,12 @@ import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import ArticleColumn from "../../components/ArticleColumn/ArticleColumn";
 import Loader from "../../components/Loader/Loader";
 import Paging from "../../components/Paging/Paging";
 import Article from "../../model/article";
 import styles from "../../styles/searchPage.module.css";
 import searchTopImage from "../../public/images/me.png";
+import ArticleList from "../../components/ArticleList/ArticleList";
 
 const itemsPerPage = 12; // 페이지의 필요에 따라 유동적으로 변경
 
@@ -62,17 +62,13 @@ const SearchPage = () => {
             <section className={styles.article_section}>
               {articleList.length > 0 && (
                 <>
-                  {articleList
-                    .slice(
+                  <ArticleList
+                    articleList={articleList.slice(
                       (selectedPage - 1) * itemsPerPage,
                       selectedPage * itemsPerPage
-                    )
-                    .map((article) => (
-                      <ArticleColumn
-                        key={article._id.toString()}
-                        article={article}
-                      />
-                    ))}
+                    )}
+                    cardType="standard"
+                  />
                   <Paging
                     listLength={articleList.length}
                     route={`search/${router.query.query}`}

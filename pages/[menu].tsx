@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import ArticleColumn from "../components/ArticleColumn/ArticleColumn";
+import ArticleList from "../components/ArticleList/ArticleList";
 import Loader from "../components/Loader/Loader";
 import MainBanner from "../components/MainBanner/MainBanner";
 import Paging from "../components/Paging/Paging";
@@ -9,7 +9,7 @@ import Article from "../model/article";
 import styles from "../styles/menuPage.module.css";
 import { findMenu } from "../util/staticDatas/menu";
 
-const itemsPerPage = 12; // 페이지의 필요에 따라 유동적으로 변경
+const itemsPerPage = 6; // 페이지의 필요에 따라 유동적으로 변경
 
 const MenuPage = () => {
   const router = useRouter();
@@ -74,17 +74,13 @@ const MenuPage = () => {
             <section className={styles.article_section}>
               {articleList.length > 0 && (
                 <>
-                  {articleList
-                    .slice(
+                  <ArticleList
+                    articleList={articleList.slice(
                       (selectedPage - 1) * itemsPerPage,
                       selectedPage * itemsPerPage
-                    )
-                    .map((article) => (
-                      <ArticleColumn
-                        key={article._id.toString()}
-                        article={article}
-                      />
-                    ))}
+                    )}
+                    cardType="standard"
+                  />
                   <Paging
                     listLength={articleList.length}
                     route={`${router.query.menu}`}

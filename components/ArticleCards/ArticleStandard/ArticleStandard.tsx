@@ -2,17 +2,16 @@ import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import Article from "../../model/article";
-import styles from "./ArticleColumn.module.css";
+import Article from "../../../model/article";
+import styles from "./ArticleStandard.module.css";
 
-const ArticleColumn: React.FC<{ article: Article }> = ({ article }) => {
+const ArticleStandard: React.FC<{ article: Article }> = ({ article }) => {
   const { _id, coverImage, previewContent, date, likeCount, commentCount } =
     article;
   return (
     <Link href={`/article/${_id.toString()}`}>
       <div className={`article_column ${styles.item}`}>
         <div className={styles.image_container}>
-          {/* <img src={coverImage} alt="게시글_이미지" loading="lazy" /> */}
           <Image
             src={coverImage}
             width={100}
@@ -50,4 +49,4 @@ const ArticleColumn: React.FC<{ article: Article }> = ({ article }) => {
   );
 };
 
-export default ArticleColumn;
+export default ArticleStandard;

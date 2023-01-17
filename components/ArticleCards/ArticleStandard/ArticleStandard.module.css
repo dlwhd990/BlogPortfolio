@@ -94,8 +94,9 @@
 
 @media screen and (max-width: 1150px) {
   .item {
-    width: 32rem;
-    height: 40rem;
+    width: 30rem;
+    min-height: 40rem;
+    height: auto;
     margin: calc(6rem / 4);
   }
 
