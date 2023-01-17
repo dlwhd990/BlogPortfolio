@@ -1,5 +1,4 @@
 import Article from "../../model/article";
-import ArticleMini from "../ArticleCards/ArticleMini/ArticleMini";
 import ArticleStandard from "../ArticleCards/ArticleStandard/ArticleStandard";
 import styles from "./ArticleList.module.css";
 
