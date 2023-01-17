@@ -5,6 +5,7 @@ import ArticleList from "../components/ArticleList/ArticleList";
 import { useEffect, useState } from "react";
 import Article from "../model/article";
 import axios from "axios";
+import Loader from "../components/Loader/Loader";
 
 const bannerData = {
   subTop: "BLOG & PORTFOLIO",
@@ -29,6 +30,7 @@ const HomePage = () => {
 
   return (
     <main className={`homepage ${styles.main}`}>
+      {!pending && <Loader />}
       {pending && (
         <>
           <MainBanner bannerData={bannerData} />
