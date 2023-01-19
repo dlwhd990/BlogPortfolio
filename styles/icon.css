@@ -57,3 +57,7 @@
 .project {
   color: var(--color-mint);
 }
+
+.job {
+  color: rgb(239, 214, 62);
+}
