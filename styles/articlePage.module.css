@@ -187,7 +187,13 @@
 }
 
 .main article table {
+  width: 100%;
   background-color: #f4f6f7;
+  display: block;
+  white-space: normal;
+  overflow-x: auto;
+  width: max-content;
+  max-width: 100%;
 }
 
 .main article table th {
@@ -198,10 +204,8 @@
 }
 
 .main article table td {
-  width: 5rem;
-  height: 5rem;
   background-color: white;
-  text-align: center;
+  padding: 2rem;
 }
 
 @media screen and (max-width: 1500px) {
