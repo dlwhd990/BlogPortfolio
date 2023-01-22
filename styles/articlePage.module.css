@@ -189,11 +189,6 @@
 .main article table {
   width: 100%;
   background-color: #f4f6f7;
-  display: block;
-  white-space: normal;
-  overflow-x: auto;
-  width: max-content;
-  max-width: 100%;
 }
 
 .main article table th {
@@ -206,6 +201,10 @@
 .main article table td {
   background-color: white;
   padding: 2rem;
+}
+
+.main article table td p {
+  word-break: keep-all;
 }
 
 @media screen and (max-width: 1500px) {
@@ -228,6 +227,14 @@
   .comment_section {
     width: 100%;
     padding: 4rem 1.5rem 10rem 1.5rem;
+  }
+
+  .main article table {
+    display: block;
+    white-space: normal;
+    overflow-x: auto;
+    width: max-content;
+    max-width: 100%;
   }
 }
 
