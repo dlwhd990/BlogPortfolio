@@ -46,3 +46,9 @@
 .menu_popup li {
   padding-left: 1rem !important;
 }
+
+@media screen and (max-width: 1150px) {
+  .menu_popup {
+    display: none;
+  }
+}
