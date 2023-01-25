@@ -11,11 +11,15 @@ export const getServerSideProps = async (
   const collection = db.collection("article");
   const result = await collection.distinct("_id", {});
   const res = context.res;
+  const main = {
+    loc: "https://blog.dlwhd990.vercel.app/",
+    lastmod: new Date().toISOString(),
+  };
   const sitemap = result.map((id) => ({
     loc: `https://blog.dlwhd990.vercel.app/article/${id.toString()}`,
     lastmod: new Date().toISOString(),
   }));
-  const fields = [...sitemap];
+  const fields = [main, ...sitemap];
 
   return getServerSideSitemap(context, fields);
 };
