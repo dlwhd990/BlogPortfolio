@@ -1,3 +1,5 @@
+/** @type {import('next-sitemap').IConfig} */
+
 const config = {
   siteUrl: "https://blog.dlwhd990.vercel.app",
   generateRobotsTxt: true,
