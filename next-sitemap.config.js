@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 
-const config = {
+module.exports = {
   siteUrl: "https://blog.dlwhd990.vercel.app",
   generateRobotsTxt: true,
   exclude: ["/sitemap.xml"],
