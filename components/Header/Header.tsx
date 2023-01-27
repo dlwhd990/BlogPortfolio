@@ -24,7 +24,8 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   const router = useRouter();
-  const [scrolled, setScrolled] = useState(false);
+  const [backGroundOn, setBackGroundOn] = useState(false);
+  const [throttle, setThrottle] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const sidebarState = useAppSelector((state) => state.toggle.sidebar);
   const darkModeState = useAppSelector((state) => state.toggle.darkMode);
@@ -71,19 +72,27 @@ const Header = () => {
     router.push(`/search/${searchInput}?page=1`);
   };
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (window.scrollY < 430) setScrolled(false);
-      else setScrolled(true);
+  const throttleScroll = () => {
+    if (throttle) return;
+    setThrottle(true);
+    setTimeout(() => {
+      console.log("DDD");
+      if (window.scrollY > 430) setBackGroundOn(true);
+      else setBackGroundOn(false);
+      setThrottle(false);
     }, 200);
-    return () => clearInterval(timer);
-  }, []);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", throttleScroll);
+    return () => window.removeEventListener("scroll", throttleScroll);
+  }, [throttleScroll]);
 
   return (
     <header className={styles.header}>
       <nav
         className={`${styles.navbar} ${
-          scrolled || sidebarState
+          backGroundOn || sidebarState
             ? `${styles.on} header_on`
             : `${styles.off} header_off`
         }`}

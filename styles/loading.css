@@ -30,11 +30,13 @@
   font-size: 0.5px;
   border-radius: 50%;
   animation: blast 1s ease-in infinite;
+  -webkit-animation: blast 1s ease-in infinite;
 }
 .loader::after {
   font-size: 1px;
   background: var(--color-blue);
   animation: bounce 1s ease-in infinite;
+  -webkit-animation: bounce 1s ease-in infinite;
 }
 
 @keyframes bounce {
@@ -47,6 +49,30 @@
   }
 }
 @keyframes blast {
+  0%,
+  40% {
+    font-size: 0.5px;
+  }
+  70% {
+    opacity: 1;
+    font-size: 4px;
+  }
+  100% {
+    font-size: 6px;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    font-size: 0.75px;
+  }
+  50% {
+    font-size: 1.5px;
+  }
+}
+@-webkit-keyframes blast {
   0%,
   40% {
     font-size: 0.5px;
