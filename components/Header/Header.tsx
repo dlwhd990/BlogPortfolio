@@ -76,7 +76,6 @@ const Header = () => {
     if (throttle) return;
     setThrottle(true);
     setTimeout(() => {
-      console.log("DDD");
       if (window.scrollY > 430) setBackGroundOn(true);
       else setBackGroundOn(false);
       setThrottle(false);
