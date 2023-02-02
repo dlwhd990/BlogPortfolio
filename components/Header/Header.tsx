@@ -10,7 +10,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { popupToast } from "../../store/toast";
 import {
@@ -72,7 +72,7 @@ const Header = () => {
     router.push(`/search/${searchInput}?page=1`);
   };
 
-  const throttleScroll = () => {
+  const throttleScroll = useCallback(() => {
     if (throttle) return;
     setThrottle(true);
     setTimeout(() => {
@@ -80,7 +80,7 @@ const Header = () => {
       else setBackGroundOn(false);
       setThrottle(false);
     }, 200);
-  };
+  }, [throttle]);
 
   useEffect(() => {
     window.addEventListener("scroll", throttleScroll);
